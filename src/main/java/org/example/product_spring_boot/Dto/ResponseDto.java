@@ -4,6 +4,7 @@ import lombok.Builder;
 import lombok.Setter;
 
 @Setter
+@Builder
 public class ResponseDto {
     private String productName;
     private double productPrice;
