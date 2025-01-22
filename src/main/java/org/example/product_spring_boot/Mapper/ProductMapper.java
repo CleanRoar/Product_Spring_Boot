@@ -19,8 +19,8 @@ public class ProductMapper {
         List<ResponseDto> dtos = new ArrayList<>();
         for (ProductEntity e : productEntity ){
             ResponseDto dto = ResponseDto.builder()
-                    .productPrice(e.getProductPrice())
                     .productName(e.getProductName())
+                    .productPrice(e.getProductPrice())
                     .stock(e.getStock()).build();
             dtos.add(dto);
         }
