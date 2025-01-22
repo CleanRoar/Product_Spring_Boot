@@ -12,27 +12,19 @@ import java.util.List;
 @Component
 @RequiredArgsConstructor
 public class ProductMapper {
-
     private final ProductRepository repository;
 
-    public List<ResponseDto> EntityToDtoList(List<ProductEntity> productEntity){
+    public List<ResponseDto> EntityToResponseDto(List<ProductEntity> entities){
+
         List<ResponseDto> dtos = new ArrayList<>();
-        for (ProductEntity e : productEntity ){
+
+        for(ProductEntity e:entities){
             ResponseDto dto = ResponseDto.builder()
                     .productName(e.getProductName())
-                    .productPrice(e.getProductPrice())
-                    .stock(e.getStock()).build();
+                    .stock(e.getStock())
+                    .productPrice(e.getProductPrice()).build();
             dtos.add(dto);
         }
         return dtos;
-    }
-
-
-    public ResponseDto EntityToDto(ProductEntity entity){
-        return ResponseDto.builder()
-                .productName(entity.getProductName())
-                .stock(entity.getStock())
-                .productPrice(entity.getProductPrice())
-                .build();
     }
 }
