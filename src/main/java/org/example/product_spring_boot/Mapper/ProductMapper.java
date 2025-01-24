@@ -37,4 +37,5 @@ public class ProductMapper {
                 .stock(entity.getStock())
                 .build();
     }
+
 }

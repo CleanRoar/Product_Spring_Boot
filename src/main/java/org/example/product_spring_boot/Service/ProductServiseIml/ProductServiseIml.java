@@ -47,4 +47,21 @@ public class ProductServiseIml implements ProductService {
         }
         return mapper.entityResponseById(entity);
     }
+
+    @Override
+    public Long uptadeProduct(RequestDto dto, Long id) {
+        Optional<ProductEntity> optionalProductEntity = repository.findById(id);
+
+        if (optionalProductEntity.isPresent()){
+
+
+            ProductEntity entity = optionalProductEntity.get();
+            entity.setProductName(dto.getProductName());
+            entity.setProductPrice(dto.getProductPrice());
+            entity.setStock(dto.getStock());
+
+            repository.save(entity);
+        }
+        return 0L;
+    }
 }

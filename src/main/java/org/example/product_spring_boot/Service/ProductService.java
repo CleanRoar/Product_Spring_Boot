@@ -15,4 +15,7 @@ public interface ProductService {
 
     ResponseDto findById(Long id);
 
+    Long uptadeProduct(RequestDto  dto , Long id);
+
+
 }

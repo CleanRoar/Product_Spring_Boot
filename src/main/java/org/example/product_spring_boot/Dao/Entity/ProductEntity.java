@@ -27,8 +27,8 @@ public class ProductEntity {
     private Long stock;
 
     @CreationTimestamp
-    private LocalDateTime created_at;
+    private LocalDateTime createdAt;
     @UpdateTimestamp
-    private LocalDateTime uptade_at;
+    private LocalDateTime uptadeAt;
 
 }
