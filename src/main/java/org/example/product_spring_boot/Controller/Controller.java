@@ -27,8 +27,8 @@ public class Controller {
         return service.getProducts();
     }
 
-    @GetMapping("/{id}")
-    public Long findById(Long id){
-        return service.FindById(id);
+    @GetMapping("{id}")
+    public ResponseDto findById(@PathVariable Long id){
+        return service.findById(id);
     }
 }

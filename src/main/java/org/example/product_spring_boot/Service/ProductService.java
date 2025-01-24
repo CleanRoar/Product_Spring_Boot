@@ -13,6 +13,6 @@ public interface ProductService {
 
     List<ResponseDto> getProducts();
 
-    Long FindById(Long id);
+    ResponseDto findById(Long id);
 
 }

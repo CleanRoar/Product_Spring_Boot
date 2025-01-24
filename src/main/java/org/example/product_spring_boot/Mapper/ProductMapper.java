@@ -27,4 +27,14 @@ public class ProductMapper {
         }
         return dtos;
     }
+
+
+
+    public ResponseDto entityResponseById(ProductEntity entity){
+        return ResponseDto.builder()
+                .productPrice(entity.getProductPrice())
+                .productName(entity.getProductName())
+                .stock(entity.getStock())
+                .build();
+    }
 }

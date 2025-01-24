@@ -37,11 +37,14 @@ public class ProductServiseIml implements ProductService {
     }
 
     @Override
-    public Long FindById( Long id) {
-        Optional<ProductEntity> optionalProductEntity = repository.findById(id);
-        if (optionalProductEntity.isPresent()){
-            ResponseDto dto = ResponseDto.builder().build();
+    public ResponseDto findById(Long id){
+
+        Optional<ProductEntity> entityOptional = repository.findById(id);
+        ProductEntity entity = ProductEntity.builder().build();
+
+        if (entityOptional.isPresent()){
+            entity=entityOptional.get();
         }
-        return 0L;
+        return mapper.entityResponseById(entity);
     }
 }
