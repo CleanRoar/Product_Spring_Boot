@@ -17,6 +17,7 @@ import java.time.LocalDateTime;
 @Data
 @Builder
 @Table(name = "Product")
+
 public class ProductEntity {
 
     @Id
@@ -31,4 +32,5 @@ public class ProductEntity {
     @UpdateTimestamp
     private LocalDateTime uptadeAt;
 
+    private Long catogory_id;
 }

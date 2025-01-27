@@ -33,6 +33,15 @@ public interface ProductRepository extends JpaRepository<ProductEntity,Long> {
 
 
 
+    @Query("select p.productName ,p.productPrice , c.id, c.name from ProductEntity p join Catagory c on p.catogory_id=c.id")
+    List<Object[]> findAllProductsWithCategory();
+
+
+
+
+
+
+
 
 
 }

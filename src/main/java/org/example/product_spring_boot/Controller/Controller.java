@@ -72,4 +72,10 @@ public class Controller {
         return repository.mehsulEdediOrta();
       }
 
+      @GetMapping("join")
+      List<Object[]> findAllProductsWithCategory(){
+        return  repository.findAllProductsWithCategory();
+      }
+
+
 }
