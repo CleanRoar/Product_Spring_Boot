@@ -67,4 +67,9 @@ public class Controller {
 
       }
 
+      @GetMapping("average")
+      public Long edediOrta(){
+        return repository.mehsulEdediOrta();
+      }
+
 }
